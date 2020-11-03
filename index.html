@@ -7,6 +7,15 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
+
+    <!-- Header -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body text-center bg-info text-white">
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
+
     <!-- Container -->
     <div class="container">
         <div class="row">
@@ -16,12 +25,19 @@
                         <div class="card-body">
                           <h6 class="card-subtitle mb-2 text-muted">Search for a city</h6>
                             <!-- Weather Search Input -->
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">Search</button>
+                                </div>
+                              </div>
+                              <!-- Search input history -->
                         </div>
                 </div>
             </div>
         </div>
         
-        
+
         <!-- Weather Search Results -->
         <!-- 5 Day Weather Forcast -->
     </div>
