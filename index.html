@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
     <title>Weather Dashboard</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Header -->
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body text-center bg-info text-white">
-                <h1>Weather Dashboard</h1>
-            </div>
-        </div>
-
+    <nav class="navbar bg-info text-white justify-content-center">
+      <h1>Weather Dashboard</h1>
+    </nav>
     <!-- Container -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card-body text-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <h6 class="card-subtitle mb-2 text-muted">Search for a city</h6>
-                            <!-- Weather Search Input -->
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary" type="button">Search</button>
-                                </div>
-                              </div>
-                              <!-- Search input history -->
-                        </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-body text-center">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Search for a city</h6>
+                <!-- Weather Search Input -->
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter city name"
+                    aria-label="Enter city name"
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">
+                      Search
+                    </button>
+                  </div>
                 </div>
+                <!-- Search input history -->
+                <ul class="list-group"></ul>
+              </div>
             </div>
+          </div>
         </div>
-        
-
         <!-- Weather Search Results -->
-        <!-- 5 Day Weather Forcast -->
+        <div class="col-md-8">
+          <!-- Current Weather -->
+          <div class="card currentWeather mt-4 pb-2 pt-1">
+            <h5 class="card-title mt-2 text-center">Curent Forecast</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <!-- 5 Day Weather Forcast -->
+          <div class="card 5dayWeather pb-2 pt-1">
+            <h5 class="card-title mt-2 text-center">Five Day Forcast</h5>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="assets/script.js"></script>
-</body>
+  </body>
 </html>
