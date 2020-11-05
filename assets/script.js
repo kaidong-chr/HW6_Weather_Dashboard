@@ -10,8 +10,18 @@ for (let i = 0; i < localStorage.length; i++) {
     // Append city name as a list
     cityName.append("<li>" + city + "</li>");
 }
+
 // Search functionality
+searchButton.click(function() {
+    // Search input for city name variable
+    let searchInput = $(".searchInput").val();
+    // Current weather variable
+    let currentUrl = myUrl + "weather?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
+    // Five day weather variable
+    let fiveDayUrl = myUrl + "forcast?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
+});
     // 
+
 // Current Weather
     // Detailed weather output to html
 // Five Day Weather
