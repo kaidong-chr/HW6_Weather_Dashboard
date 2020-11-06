@@ -1,7 +1,9 @@
 // Variables
+let searchButton = $(".searchButton");
 let myUrl = "https://api.openweathermap.org/data/2.5/"
 let apiKey = "0c2de5fc4c08fa9a0a103d78dbde557c"
 
+$(document).ready(function() {
 // Local Storage for search history
 for (let i = 0; i < localStorage.length; i++) {
     let city = localStorage.getItem(i);
@@ -18,11 +20,19 @@ searchButton.click(function() {
     // Current weather variable
     let currentUrl = myUrl + "weather?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
     // Five day weather variable
-    let fiveDayUrl = myUrl + "forcast?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
-});
-    // 
+    let fiveDayUrl = myUrl + "forecast?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
 
-// Current Weather
-    // Detailed weather output to html
-// Five Day Weather
     // 
+if (searchInput == "") {
+    // Log a search input here
+    console.log(searchInput);
+    } else {
+    // Current Weather
+        // Detailed weather output to html
+    // Five Day Weather
+        // 
+        
+    }
+    
+});
+});

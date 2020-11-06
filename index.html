@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <title>Weather Dashboard</title>
@@ -17,42 +21,49 @@
     <!-- Container -->
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <div class="card-body text-center">
-            <div class="card" style="width: 18rem">
-              <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">Search for a city</h6>
-                <!-- Weather Search Input -->
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control searchInput" placeholder="Enter city name" aria-label="Enter city name" aria-describedby="basic-addon2" />
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary searchButton" type="button">Search</button>
-                  </div>
-                </div>
-                <!-- Search input history -->
-                <ul class="list-group"></ul>
+        <div class="col-md-3 form-group">
+          <h5 class="input-group md-form form-sm form-1 pl-0">
+            Search for a city
+          </h5>
+          <!-- Weather Search Input -->
+          <div class="input-group mb-3">
+            <input type="text" class="form-control searchInput" placeholder="Enter city name" aria-label="Enter city name" aria-describedby="basic-addon2"/>
+            <div class="input-group-append">
+              <!-- Search button -->
+              <button class="btn btn-outline-secondary searchButton" type="button"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <!-- Search input history -->
+          <div class="cityButtons">
+            <ul></ul>
+          </div>
+        </div>
+        <!-- Weather Search Results -->
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Current Weather -->
+              <div class="card currentWeather">
+                <!-- <h5 class="card-title mt-2 text-center">Current Forecast</h5> -->
               </div>
             </div>
           </div>
         </div>
-        <!-- Weather Search Results -->
-        <div class="col-md-8">
-          <!-- Current Weather -->
-          <div class="card currentWeather mt-4 pb-2 pt-1">
-            <h5 class="card-title mt-2 text-center">Current Forecast</h5>
-          </div>
-        </div>
       </div>
-
       <div class="row">
         <div class="col-md-12">
           <!-- 5 Day Weather Forecast -->
-          <div class="card 5dayWeather pb-2 pt-1">
-            <h5 class="card-title mt-2 text-center">Five Day Forcast</h5>
+          <div class="card fiveDayWeather">
+            <!-- <h5 class="card-title mt-2 text-center">Five Day Forecast</h5> -->
+            <div class="row">
+             <div class="col 5DayDaily">
           </div>
         </div>
       </div>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
