@@ -32,7 +32,7 @@ searchButton.on("click", function(event) {
 
   function showWeather(searchInput) {
     // Current day query URL
-    let currentDay = myUrl + searchInput + "&units=imperial" + "&appid=" + apiKey;
+    let currentDay = myUrl + "weather?q=" + searchInput + "&units=imperial" + "&appid=" + apiKey;
 
     // Call for current day
     $.ajax({
@@ -41,57 +41,65 @@ searchButton.on("click", function(event) {
     }).then(function(response) {
         // Icon URL variable
         let icon = iconURL + response.weather[0].icon + ".png";
+        // Lat and long variable
+        let lat = response.coord.lat;
+        let lon = response.coord.lon;
 
     // Daily details
     $(".currentWeather").append(
-      "<div class='col s12 m6'>"
-      +  "<h2 class='daily'>" + response.name + " (" + startDate + ")" + "&nbsp" + "<img src='" + icon + "'>" + "</h2>"
+      "<div class='col'>"
+      +  "<h3 class='daily'>" + response.name + " (" + startDate + ")" + "&nbsp" + "<img src='" + icon + "'>" + "</h3>"
       +  "<ul class='daily'>" + "Temperature: " +  response.main.temp + " °F" + "</ul>"
       +  "<ul class='daily'>" + "Humidity: " + response.main.humidity + "%" + "</ul>"
       +  "<ul class='daily'>" + "Wind Speed: " +  response.wind.speed + " MPH" + "</ul>"
       + "</div>"
-      ); 
+      );
 
-    });
+    // FiveDay day query URL
+    let fiveDay = myUrl + "onecall?" + "lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=" + apiKey;
+
+    $.ajax({
+        url: fiveDay,
+        method: "GET",
+        }).then(function(response) {
+          
+          //Icon URL
+          let icon1 = iconURL + response.daily[0].weather[0].icon + ".png";
+          let icon2 = iconURL + response.daily[1].weather[0].icon + ".png";
+          let icon3 = iconURL + response.daily[2].weather[0].icon + ".png";
+          let icon4 = iconURL + response.daily[3].weather[0].icon + ".png";
+          let icon5 = iconURL + response.daily[4].weather[0].icon + ".png";
+       
+          // Adding in UV Index to daily weather 
+          $(".currentWeather").append(
+            "<div class='col-md-2'>"
+           + "<ul class='daily uvIndex'>" + "UV Index: " + response.current.uvi + "</ul>"
+           + "</div>"
+           );
     
+          // UV Index colors 
+          if (response.current.uvi <= 2) {
+            $(".uvIndex").css("background-color", "green");
+           } else if (response.current.uvi <= 5) {
+             $(".uvIndex").css("background-color", "yellow");
+           } else if (response.current.uvi <= 7) {
+               $(".uvIndex").css("background-color", "orange");
+           } else if (response.current.uvi <= 10) {
+               $(".uvIndex").css("background-color", "red");
+           } else if (response.current.uvi <= 40) {
+               $(".uvIndex").css("background-color", "violet");
+           };
+    
+
+          
+
+          })  
+
+    })
+
   }
 
-    // Five day call
-    // Lat and lon
-    // UV Index
-    // Append it's details
     // Retrieve stored cities
     // Make them clickable
 
-// // Local Storage for search history
-// for (let i = 0; i < localStorage.length; i++) {
-//     let city = localStorage.getItem(i);
-//     // Add class for the list
-//     let cityName = $(".list-group").addClass("list-group-item");
-//     // Append city name as a list
-//     cityName.append("<li>" + city + "</li>");
-// }
-
-// // Search functionality
-// searchButton.click(function() {
-//     // Search input for city name variable
-//     let searchInput = $(".searchInput").val();
-//     // Current weather variable
-//     let currentUrl = myUrl + "weather?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
-//     // Five day weather variable
-//     let fiveDayUrl = myUrl + "forecast?q=" searchInput + "&appid=" + apiKey + "&units=imperial";
-
-//     // 
-// if (searchInput == "") {
-//     // Log a search input here
-//     console.log(searchInput);
-//     } else {
-//     // Current Weather
-//         // Detailed weather output to html
-//     // Five Day Weather
-//         // 
-        
-//     }
-    
-// });
 });

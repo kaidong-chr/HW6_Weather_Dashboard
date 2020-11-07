@@ -19,12 +19,12 @@
       <h1>Weather Dashboard</h1>
     </nav>
     <!-- Container -->
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 form-group">
-          <h5 class="input-group md-form form-sm form-1 pl-0">
+          <h4 class="input-group md-form form-sm form-1 pl-0">
             Search for a city
-          </h5>
+          </h4>
           <!-- Weather Search Input -->
           <div class="input-group mb-3">
             <input
@@ -57,24 +57,25 @@
               <div class="card currentWeather"></div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- 5 Day Weather Forecast -->
-        <div class="col-md-12 5day"></div>
-        <div class="row">
-          <div class="col-md-12 forecast">
-            <div class="card-deck col s12 m">
-              <div class="day1"></div>
-              <div class="day2"></div>
-              <div class="day3"></div>
-              <div class="day4"></div>
-              <div class="day5"></div>
+          <div class="row">
+            <!-- 5 Day Weather Forecast -->
+            <div class="col-md-12 5day"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 forecast">
+              <div class="card-deck col-md-12">
+                <div class="day1"></div>
+                <div class="day2"></div>
+                <div class="day3"></div>
+                <div class="day4"></div>
+                <div class="day5"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- JavaScripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
