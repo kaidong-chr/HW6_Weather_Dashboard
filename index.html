@@ -27,14 +27,25 @@
           </h5>
           <!-- Weather Search Input -->
           <div class="input-group mb-3">
-            <input type="text" class="form-control searchInput" placeholder="Enter city name" aria-label="Enter city name" aria-describedby="basic-addon2"/>
-            <div class="input-group-append">
+            <input
+              type="text"
+              class="form-control searchInput"
+              placeholder="Enter city name"
+              aria-label="Enter city name"
+              aria-describedby="basic-addon2"
+            />
+            <div class="input-group-prepend">
               <!-- Search button -->
-              <button class="btn btn-outline-secondary searchButton" type="button"><i class="fas fa-search" aria-hidden="true"></i></button>
+              <button
+                class="btn btn-outline-secondary searchButton"
+                type="button"
+              >
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </button>
             </div>
           </div>
           <!-- Search input history -->
-          <div class="cityButtons">
+          <div class="buttonCity">
             <ul></ul>
           </div>
         </div>
@@ -43,27 +54,30 @@
           <div class="row">
             <div class="col-md-12">
               <!-- Current Weather -->
-              <div class="card currentWeather">
-                <!-- <h5 class="card-title mt-2 text-center">Current Forecast</h5> -->
-              </div>
+              <div class="card currentWeather"></div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <!-- 5 Day Weather Forecast -->
-          <div class="card fiveDayWeather">
-            <!-- <h5 class="card-title mt-2 text-center">Five Day Forecast</h5> -->
-            <div class="row">
-             <div class="col 5DayDaily">
+        <!-- 5 Day Weather Forecast -->
+        <div class="col-md-12 5day"></div>
+        <div class="row">
+          <div class="col-md-12 forecast">
+            <div class="card-deck col s12 m">
+              <div class="day1"></div>
+              <div class="day2"></div>
+              <div class="day3"></div>
+              <div class="day4"></div>
+              <div class="day5"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
+    <!-- JavaScripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="assets/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
