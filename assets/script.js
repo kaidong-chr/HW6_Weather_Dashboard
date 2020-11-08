@@ -3,6 +3,7 @@ let searchButton = $(".searchButton");
 let myUrl = "https://api.openweathermap.org/data/2.5/"
 let iconURL = "http://openweathermap.org/img/w/"
 let apiKey = "0c2de5fc4c08fa9a0a103d78dbde557c"
+
 // Date time variables
 let startDate = moment().format('M/DD/YYYY');
 let day1 = moment().add(1, 'days').format('M/DD/YYYY');
@@ -30,9 +31,49 @@ searchButton.on("click", function(event) {
     showWeather(searchInput); 
   });
 
+  // Function to retrieve stored cities
+  function listCities() {
+    // Empty out previous array, doesn't create duplicate buttons
+    $(".buttonCity").empty();
+    // Getting the searched cities
+    let storageArray = JSON.parse(localStorage.getItem("storeCities")) || [];
+    let arrayLength = storageArray.length;
+    // Loop to append cities in array
+    for (let i = 0; i < arrayLength; i++) {
+      let cityNameArray = storageArray[i];
+      
+      $(".buttonCity").append (
+        // Class the list
+        "<div class='list-group'>"
+        // Buttons for the city
+        + "<button class='list-group-item'>" + cityNameArray + "</button>"
+      )
+    }
+  }
+
+  // Call the function above to append cities
+  listCities();
+
+  // Upon click it shows the cities
+  $(".buttonCity").on("click", ".list-group-item", function(event){
+    event.preventDefault();
+    let searchInput = ($(this).text());
+    showWeather(searchInput);
+  })
+
+  // Function to show for daily weather and details 
   function showWeather(searchInput) {
     // Current day query URL
     let currentDay = myUrl + "weather?q=" + searchInput + "&units=imperial" + "&appid=" + apiKey;
+
+    // Clears out current city data, so it doesn't double up when you search again
+    $(".currentWeather").empty();
+    $(".5day").empty();
+    $(".day1").empty();
+    $(".day2").empty();
+    $(".day3").empty();
+    $(".day4").empty();
+    $(".day5").empty();
 
     // Call for current day
     $.ajax({
@@ -150,15 +191,12 @@ searchButton.on("click", function(event) {
             +  "<div class='card-text'>" + "Humidity: " + response.daily[4].humidity + "%" + "</div>" 
             + "</div>" 
           );
-          
 
-          })  
-
+            // Calling function above to append the cities
+            listCities();
+          })
     })
 
   }
-
-    // Retrieve stored cities
-    // Make them clickable
 
 });
