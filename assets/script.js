@@ -77,7 +77,7 @@ searchButton.on("click", function(event) {
            + "</div>"
            );
     
-          // UV Index colors 
+          // UV Index colors
           if (response.current.uvi <= 2) {
             $(".uvIndex").css("background-color", "green");
            } else if (response.current.uvi <= 5) {
@@ -90,7 +90,24 @@ searchButton.on("click", function(event) {
                $(".uvIndex").css("background-color", "violet");
            };
     
-
+          // Five day forecast header
+          $(".5day").append(
+            "<div class='col-md-12'>"
+           + "<h4 id='fiveDay'>" + "5 Day Forecast:" + "</h4>" 
+          );
+    
+           // Day 1
+          $(".day1").append(
+           "<div class='fiveDayCard card text-white bg-primary mb-3 col' style='width: 12rem;'>"
+           +  "<div class='card-body'>"
+           +  "<div class='card-title'>" + day1 +"</div>"
+           +  "<div class='card-text'>" + "<img src='" + icon1 + "'>" +"</div>"
+           +  "<div class='card-text'>" + "Temp: " + response.daily[0].temp.day + " °F" + "</div>"
+           +  "<div class='card-text'>" + "Humidity: " + response.daily[0].humidity + "%" + "</div>" 
+           + "</div>" 
+          );
+    
+          
           
 
           })  
