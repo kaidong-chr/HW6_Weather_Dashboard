@@ -10,12 +10,12 @@
 
 ### Demonstration
 
-![Image](./assets/image/HW6_Weather_Dashboard.gif "Weather Dashboard Demostration")
+![Image](./assets/image/HW6_Weather_Dashboard.gif "Weather Dashboard Demonstration")
 ![Image](https://img.shields.io/badge/Languages-html%20%7C%20css%20%7C%20javascript-yellow)
 
 ### Installation
 
-Prefered application and version controlled system.
+Preferred application and version controlled system.
 * Visual Studio Code - https://code.visualstudio.com/download
 * Git - https://git-scm.com/downloads
 
@@ -30,7 +30,8 @@ You can also fork or download from the repo, if you prefer to view or edit this 
 
 * Trilogy Education Services
 * W3Schools
-* stackoverflow
+* Stackoverflow
+* Bootstrap
 
 ### License
 
