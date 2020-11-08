@@ -6,7 +6,7 @@ Create a weather dashboard using a weather API to retrieve weather data for citi
 ### Implementation
 * Used https://openweathermap.org/ API for weather info.
 * Maximized bootstrap for much of styling to eliminate a CSS file.
-* JS and jQuery is the backbone, they worked in conjunction for the logic of the page. Such as storing the city create button functionality, assign color for UV index and append the weather details.
+* JS and jQuery is the backbone, they work in conjunction to build logic for the page. Such as storing the city create button functionality, assign color for UV index and append the weather details.
 * Utilized moment.js for date stamp.
 
 ### Demonstration
