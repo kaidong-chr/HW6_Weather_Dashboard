@@ -118,7 +118,38 @@ searchButton.on("click", function(event) {
             + "</div>" 
           );
     
-
+          // Day 3
+          $(".day3").append(
+            "<div class='fiveDayCard card text-white bg-primary mb-3 col' style='width: 12rem;'>"
+            +  "<div class='card-body'>"
+            +  "<div class='card-title'>" + day3 +"</div>"
+            +  "<div class='card-text'>" + "<img src='" + icon3 + "'>" +"</div>"
+            +  "<div class='card-text'>" + "Temp: " + response.daily[2].temp.day + " °F" + "</div>"
+            +  "<div class='card-text'>" + "Humidity: " + response.daily[2].humidity + "%" + "</div>" 
+            + "</div>" 
+          );
+    
+          // Day 4
+          $(".day4").append(
+            "<div class='fiveDayCard card text-white bg-primary mb-3 col' style='width: 12rem;'>"
+            +  "<div class='card-body'>"
+            +  "<div class='card-title'>" + day4 +"</div>"
+            +  "<div class='card-text'>" + "<img src='" + icon4 + "'>" +"</div>"
+            +  "<div class='card-text'>" + "Temp: " + response.daily[3].temp.day + " °F" + "</div>"
+            +  "<div class='card-text'>" + "Humidity: " + response.daily[3].humidity + "%" + "</div>" 
+            + "</div>" 
+          );
+    
+          // Day 5
+          $(".day5").append(
+            "<div class='fiveDayCard card text-white bg-primary mb-3 col' style='width: 12rem;'>"
+            +  "<div class='card-body'>"
+            +  "<div class='card-title'>" + day5 +"</div>"
+            +  "<div class='card-text'>" + "<img src='" + icon5 + "'>" +"</div>"
+            +  "<div class='card-text'>" + "Temp: " + response.daily[4].temp.day + " °F" + "</div>"
+            +  "<div class='card-text'>" + "Humidity: " + response.daily[4].humidity + "%" + "</div>" 
+            + "</div>" 
+          );
           
 
           })  
