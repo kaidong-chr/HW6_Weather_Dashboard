@@ -9,11 +9,12 @@ Create a weather dashboard using a weather API to retrieve weather data for citi
 * JS and jQuery is the backbone, they worked in conjunction for the logic of the page. Such as storing the city create button functionality, assign color for UV index and append the weather details.
 * Utilized moment.js for date stamp.
 
-[Weather Dashboard Live Link](https://kaidong-chr.github.io/HW6_Weather_Dashboard/)
-
 ### Demonstration
 
 ![Image](./assets/image/HW6_Weather_Dashboard.gif "Weather Dashboard Demonstration")
+
+[Weather Dashboard Live Link](https://kaidong-chr.github.io/HW6_Weather_Dashboard/)
+
 ![Image](https://img.shields.io/badge/Languages-html%20%7C%20css%20%7C%20javascript-yellow)
 
 ### Installation
