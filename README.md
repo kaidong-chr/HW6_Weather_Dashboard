@@ -1,7 +1,7 @@
 # HW6_Weather_Dashboard
 
 ### Overview
-
+Create a weather dashboard using a weather API to retrieve weather data for cities. It must include current weather condition, 5 day forecast, UV index and search history.
 
 ### Implementation
 * Used https://openweathermap.org/ API for weather info.
