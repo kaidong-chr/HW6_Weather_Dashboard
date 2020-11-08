@@ -107,7 +107,18 @@ searchButton.on("click", function(event) {
            + "</div>" 
           );
     
-          
+          // Day 2
+          $(".day2").append(
+            "<div class='fiveDayCard card text-white bg-primary mb-3 col' style='width: 12rem;'>"
+            +  "<div class='card-body'>"
+            +  "<div class='card-title'>" + day2 +"</div>"
+            +  "<div class='card-text'>" + "<img src='" + icon2 + "'>" +"</div>"
+            +  "<div class='card-text'>" + "Temp: " + response.daily[1].temp.day + " °F" + "</div>"
+            +  "<div class='card-text'>" + "Humidity: " + response.daily[1].humidity + "%" + "</div>" 
+            + "</div>" 
+          );
+    
+
           
 
           })  
